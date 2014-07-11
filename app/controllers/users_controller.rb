@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    verify_recaptcha and @user.captcha_checked!
+#     verify_recaptcha and @user.captcha_checked!
 
     if @user.save
       session[:current_user_id] = @user.id

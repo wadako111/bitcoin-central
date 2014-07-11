@@ -55,7 +55,7 @@ class User < Account
   validate :captcha do
     if captcha.nil? and new_record?
       unless skip_captcha
-        errors[:captcha] << I18n.t("errors.answer_incorrect")
+#        errors[:captcha] << I18n.t("errors.answer_incorrect")
       end
     end
   end
