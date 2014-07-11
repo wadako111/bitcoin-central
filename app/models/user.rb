@@ -80,6 +80,10 @@ class User < Account
     UserMailer.registration_confirmation(self).deliver
   end
 
+  def allowed_currencies
+    Currency.all.map { |c| c.code.downcase.to_sym }
+  end
+
   protected
 
   def self.find_for_database_authentication(warden_conditions)
